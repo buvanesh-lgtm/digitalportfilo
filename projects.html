@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buvanesh Portfolio | Projects</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <span>digital Portfolio</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <marquee behavior="scroll" direction="left" scrollamount="5" style="background-color: aquamarine;">
+  🚀 Welcome to my projects| Buvanesh S | Web Development Enthusiast 🚀
+</marquee>
+
+  <!-- Projects Section -->
+  <section class="projects-section">
+    <h1>My Projects</h1>
+    <div class="slider">
+      <div class="slide active" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+        <h2>Simple Responsive Website</h2>
+        <p>A clean, user-friendly website that adapts to any device screen size.</p>
+        <p>Built with HTML and CSS focusing on accessibility and design.</p>
+      </div>
+      <div class="slide" style="background: linear-gradient(135deg, #ff9966, #ff5e62);">
+        <h2>JavaScript-based Quiz App</h2>
+        <p>Interactive quiz app to test your knowledge with instant feedback.</p>
+        <p>Features timer and score tracking using JavaScript.</p>
+      </div>
+      <div class="slide" style="background: linear-gradient(135deg, #43cea2, #185a9d);">
+        <h2>Personal Blog with CMS</h2>
+        <p>A dynamic blog platform with content management system backend.</p>
+        <p>Allows easy post creation and management for personal updates.</p>
+      </div>
+    </div>
+
+    <div class="slider-controls">
+      <button id="prevBtn">&#10094; Prev</button>
+      <button id="nextBtn">Next &#10095;</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Buvanesh S. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Simple slider functionality
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+    });
+  </script>
+</body>
+</html>
